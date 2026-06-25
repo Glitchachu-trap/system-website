@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alter Profile</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero profile-hero">
+    <div class="hero-content">
+      <p class="eyebrow">Alter Profile</p>
+      <h1 id="profileName">Loading...</h1>
+      <p id="profileRole" class="hero-text"></p>
+      <div class="creator-access" id="creatorAccess">
+        <p id="creatorStatus">Creator access required to customize this profile.</p>
+        <div class="creator-actions">
+          <button id="creatorLoginBtn" class="button button-secondary">Creator login</button>
+          <button id="creatorLogoutBtn" class="button button-secondary hidden">Logout</button>
+        </div>
+      </div>
+      <a href="index.html" class="button button-secondary">Back to Gallery</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section section-profile">
+      <div class="section-inner profile-grid">
+        <article class="profile-card">
+          <img id="profileImagePreview" src="" alt="Alter portrait" />
+          <div class="card-body">
+            <h2>Profile snapshot</h2>
+            <p id="profileDescription"></p>
+          </div>
+        </article>
+
+        <article class="profile-editor" id="profileEditor">
+          <h2>Personal Collage</h2>
+          <p class="section-copy">Write your story, add image URLs, and choose a music link to build a collage-style profile.</p>
+
+          <label for="bioInput">About me</label>
+          <textarea id="bioInput" placeholder="Tell people about yourself..."></textarea>
+
+          <label for="imageUrlInput">Add an image URL</label>
+          <div class="input-row">
+            <input id="imageUrlInput" type="url" placeholder="https://example.com/photo.jpg" />
+            <button id="addImageBtn" class="button button-small">Add image</button>
+          </div>
+
+          <label for="musicUrlInput">Add a music link</label>
+          <div class="input-row">
+            <input id="musicUrlInput" type="url" placeholder="https://example.com/song.mp3" />
+            <button id="addMusicBtn" class="button button-small">Add music</button>
+          </div>
+
+          <label for="musicTitleInput">Music title</label>
+          <input id="musicTitleInput" type="text" placeholder="Song name or track title" />
+
+          <label for="musicAuthorInput">Artist / author</label>
+          <input id="musicAuthorInput" type="text" placeholder="Artist, band, or author name" />
+
+          <label for="musicCoverInput">Cover image URL</label>
+          <input id="musicCoverInput" type="url" placeholder="https://example.com/cover.jpg" />
+
+          <div class="toolbar-row">
+            <button id="saveProfileBtn" class="button">Save profile</button>
+            <button id="resetProfileBtn" class="button button-secondary">Reset</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-collage">
+      <div class="section-inner">
+        <h2>Your collage</h2>
+        <p class="section-copy">This space saves your images, music embeds, and personal reflections for the selected alter.</p>
+        <div id="collageArea" class="collage-area"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Saved content stays in this browser until cleared. Use image and audio URLs to build a richer profile.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="profile.js"></script>
+</body>
+</html>
